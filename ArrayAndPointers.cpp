@@ -2,16 +2,18 @@
 
 using namespace std;
 //void sum(int[]);
-void sum(int *a,int size)// compilor pass array as reference only not as value.
+void sum(int a[],int size)// compilor always pass array as reference only not as value.
 {
     //int size = sizeof(a)/sizeof(a[0]);// this will give this size of int* if int a[] is passed hence of no use....
     int sum = 0;
+    a[0] = 10;
     for (int i = 0;i < size;i++)
     {
-        sum += *a + i;
+        sum += *a;
+        *a++;
         cout<<sum<<" "<<endl;
     }
-    
+    cout<<endl;
 }
 int main()
 {
@@ -31,5 +33,13 @@ int main()
     //     cout<<*(a + i)<<endl;
     // }
     sum(a,size); // we will need to pass size of the array as this is pointer to arr[0] and in function definition this wull give the size of only a[0]
+    for (int i = 0;i < size;++i)
+    {
+        cout<<a[i]<<endl;
+    }
+    cout<<"Playing with 2D array & Pointers "<<endl;
+    int d[2][3] = {1,2,3,4,5,6};
+    cout<<*d[0];
+    cout<<*(d + 1)[0];
     return 0;
 }
