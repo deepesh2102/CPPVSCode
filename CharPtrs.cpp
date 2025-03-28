@@ -22,5 +22,7 @@ int main()
         cout<<c[i];
         i++;
     }
+    char *names[] = {"Miller", "Jones", "Anderson"};
+    cout<<*(names + 1);
     return 0;
 }
